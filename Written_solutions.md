@@ -300,4 +300,40 @@ $$
 
 The maximum of the absolute value of $$2 \cos\left(\frac{\pi i}{N + 1}\right)$$ is 2, so the eigenvalues are non-negative.
 
-As the grid size increases, the smallest eigenvalue of the Laplacian approach zero.This increases the condition number of the matrix, leading to a spectral radius closer to 1, which slowes down convergence.  
+As the grid size increases, the smallest eigenvalue of the Laplacian approach zero.This increases the condition number of the matrix, leading to a spectral radius closer to 1, which slowes down convergence. 
+
+The **convergence radius** of an iterative method is determined by the **spectral radius** of the iteration matrix \( T \), defined as the largest absolute value of its eigenvalues. 
+
+For the iterative methods applied to the discrete Poisson problem, the convergence radius is:
+
+$$
+\
+\rho(T) = \max |\lambda_i(T)|,
+\
+$$
+
+where $$\lambda_i(T)$$ are the eigenvalues of the iteration matrix $$T$$.
+
+###  Jacobi Method
+The iteration matrix for Jacobi is:
+
+$$
+\
+T_J = D^{-1}(L + U),
+\
+$$
+
+where  $$D$$  is the diagonal part, and  $$L$$  and $$U$$  are the lower and upper triangular parts of the system matrix 
+
+For the discrete Poisson problem, the convergence radius is:
+
+$$
+\
+\rho(T_J) = \max \left| 1 - \frac{h^2 \lambda_i}{2} \right|,
+\
+$$
+
+
+For larger grids, the smallest eigenvalues $$\lambda_i$$ of the Laplacian matrix approach zero, making $$\rho(T)$$ approach 1. This causes slower convergence for all methods, especially Jacobi and Gauss-Seidel.
+
+
