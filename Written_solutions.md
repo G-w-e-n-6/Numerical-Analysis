@@ -300,3 +300,4 @@ $$
 
 The maximum of the absolute value of $$2 \cos\left(\frac{\pi i}{N + 1}\right)$$ is 2, so the eigenvalues are non-negative.
 
+As the grid size increases, the smallest eigenvalue of the Laplacian approach zero.This increases the condition number of the matrix, leading to a spectral radius closer to 1, which slowes down convergence.  
