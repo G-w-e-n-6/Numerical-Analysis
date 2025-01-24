@@ -337,3 +337,40 @@ $$
 For larger grids, the smallest eigenvalues $$\lambda_i$$ of the Laplacian matrix approach zero, making $$\rho(T)$$ approach 1. This causes slower convergence for all methods, especially Jacobi and Gauss-Seidel.
 
 
+
+
+
+
+### **Cost of an Iterative Solver**
+
+The **cost of an iterative solver** depnd on two components:
+
+1. **Cost per iteration**: The computational cost of performing a single iteration of the method.
+2. **Number of iterations**: The total number of iterations required for the iterative solver to converge. 
+
+
+
+#### Example: Jacobi Method
+- The Jacobi method involves matrix-vector multiplications. The system matrix \( A \) (e.g., the discrete Laplacian) is sparse for PDEs like the Poisson equation, typically with \( O(N^2) \) unknowns in 2D for a grid of size $$N \times N$$.
+- The sparsity of \( A \) means it has \( O(N^2) \) nonzero entries for a 5-point stencil.
+- **Operations per iteration**:
+  - A sparse matrix-vector multiplication costs \( O(N^2) \) operations.
+  - Some additional vector operations (addition, scaling) are \( O(N^2) \).
+- **Total cost per iteration**: \( O(N^2) \).
+
+
+The **total cost** is the product of the cost per iteration and the number of iterations:
+
+$$
+\
+\text{Total Cost} = \text{Cost per Iteration} \times \text{Number of Iterations}.
+\
+$$
+
+For the Jacobi method:
+- Cost per iteration: \( O(N^2) \).
+- Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
+
+
+
+
