@@ -441,27 +441,20 @@ where $$h_1 = \frac{b-a}{m}$$, $$h_2 = \frac{d-c}{n}$$.
 From above we can write:
 
 $$
--(\delta_x^2 U_{ij} + \delta_y^2 U_{ij}) = f(x_i, y_j) - \frac{h_1^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial x^4} - \frac{h_2^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial y^4}
-$$
-
-$$
-- \frac{h_1^4}{360} \frac{\partial^6 u(\xi_{ij}, y_j)}{\partial x^6} - \frac{h_2^4}{360} \frac{\partial^6 u(x_i, \eta_{ij})}{\partial y^6}, \quad (i,j) \in \omega,
+-(\delta_x^2 U_{ij} + \delta_y^2 U_{ij}) = f(x_i, y_j) - \frac{h_1^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial x^4} - \frac{h_2^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial y^4}- \frac{h_1^4}{360} \frac{\partial^6 u(\xi_{ij}, y_j)}{\partial x^6} - \frac{h_2^4}{360} \frac{\partial^6 u(x_i, \eta_{ij})}{\partial y^6}, \quad (i,j) \in \omega,
 $$
 
 $$
 u(x_i, y_j) = \varphi(x_i, y_j), \quad (i,j) \in \gamma,
 $$
 
-where $\xi_{ij} \in (x_i, x_{i+1})$$, $$\eta_{ij} \in (y_j, y_{j+1})$$.
+where $$\xi_{ij} \in (x_i, x_{i+1})$$, $$\eta_{ij} \in (y_j, y_{j+1})$$.
 
 The error equation can be rewritten as:
 
 $$
--(\delta_x^2 e_{ij} + \delta_y^2 e_{ij}) = - \frac{h_1^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial x^4} - \frac{h_2^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial y^4}
+-(\delta_x^2 e_{ij} + \delta_y^2 e_{ij}) = - \frac{h_1^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial x^4} - \frac{h_2^2}{12} \frac{\partial^4 u(x_i, y_j)}{\partial y^4}- \frac{h_1^4}{360} \frac{\partial^6 u(\xi_{ij}, y_j)}{\partial x^6} - \frac{h_2^4}{360} \frac{\partial^6 u(x_i, \eta_{ij})}{\partial y^6}, \quad (i,j) \in \omega,
 $$
-
-$$
-- \frac{h_1^4}{360} \frac{\partial^6 u(\xi_{ij}, y_j)}{\partial x^6} - \frac{h_2^4}{360} \frac{\partial^6 u(x_i, \eta_{ij})}{\partial y^6}, \quad (i,j) \in \omega,
 
 $$
 e_{ij} = 0, \quad (i,j) \in \gamma.
@@ -471,29 +464,29 @@ we construct the difference schemes:
 
 $$
 -(\delta_x^2 v_{ij} + \delta_y^2 v_{ij}) = \frac{1}{12} \frac{\partial^4 u(x_i, y_j)}{\partial x^4}, \quad (i,j) \in \omega,
-\]
+$$
 
-\[
+$$
 v_{ij} = 0, \quad (i,j) \in \gamma,
-\]
+$$
 
 and
 
-\[
+$$
 -(\delta_x^2 w_{ij} + \delta_y^2 w_{ij}) = \frac{1}{12} \frac{\partial^4 u(x_i, y_j)}{\partial y^4}, \quad (i,j) \in \omega,
-\]
+$$
 
-\[
+$$
 w_{ij} = 0, \quad (i,j) \in \gamma.
-\]
+$$
 
-Thus, by Theorem 2.5, we obtain:
+Thus, by Theorem, we obtain:
 
-\[
+$$
 v(x_i, y_j) - v_{ij}(h_1, h_2) = O(h_1^2 + h_2^2), \quad (i,j) \in \omega,
-\]
+$$
 
-\[
+$$
 w(x_i, y_j) - w_{ij}(h_1, h_2) = O(h_1^2 + h_2^2), \quad (i,j) \in \omega.
-\]
+$$
 
