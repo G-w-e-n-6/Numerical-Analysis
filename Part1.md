@@ -171,4 +171,43 @@ $$
 
 Since the matrix of the linear system is a tri-diagonal matrix, it's useful to use a sparse representation where only the entries different from zero are stored. This representation allows us to save memory and computational cost. Usually, Gaussian elimination of an $$n \times n$$ matrix costs $$O(n^3)$$, but for a sparse matrix, we have $$O(n^2)$$ for the 2D Laplacian.
 
+## 2.2 Interative methods
 
+The second derivative approximation on a uniform grid using finite differences can be expressed as:
+
+$$
+D_2 = \frac{1}{h^2}
+\begin{bmatrix}
+-2 & 1 & 0 & \cdots & 0 \\
+1 & -2 & 1 & \cdots & 0 \\
+0 & 1 & -2 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & 1 \\
+0 & 0 & 0 & 1 & -2
+\end{bmatrix},
+$$
+
+where $$h$$is the grid spacing.
+
+The eigenvalues $$\lambda_k$$ of the matrix $$D_2$$ are given by:
+
+$$
+\lambda_k = -\frac{4}{h^2} \sin^2\left(\frac{k \pi}{2n}\right),
+$$
+
+where $$k = 1, 2, \dots, n-1$$, and $$n$$ is the number of grid points.
+
+The Chebyshev polynomials of the first kind, $$T_n(x)$$, satisfy the recurrence relation:
+
+$$
+T_0(x) = 1, \quad T_1(x) = x,
+$$
+
+$$
+T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x), \quad n \geq 1.
+$$
+
+The eigenvalues of the second derivative matrix are related to the zeros of the Chebyshev polynomials $$T_n(x)$$ through the relation:
+
+$$
+x_k = \cos\left(\frac{(2k-1)\pi}{2n}\right), \quad k = 1, 2, \dots, n.
+$$
