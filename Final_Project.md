@@ -189,7 +189,18 @@ The expected convergence rate is $O(h^2)$ because of the accuracy of the 2nd ord
 
 ## 2.1 Direct methods
 
+By implementing a sparse matrix in Python, the result shows as follows.\
+![Untitled-1](https://github.com/user-attachments/assets/483d6c52-9d65-41bd-82cc-077499cbe62b)
+![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
+
+
+
 Since the matrix of the linear system is a tri-diagonal matrix, it's useful to use a sparse representation where only the entries different from zero are stored. This representation allows us to save memory and computational cost. Usually, Gaussian elimination of an $$n \times n$$ matrix costs $$O(n^3)$$, but for a sparse matrix, we have $$O(n^2)$$ for the 2D Laplacian.
+
+The graph below compares the computational time between the dense and sparse matrix solvers. \
+It is evident that the sparse matrix solver, as assumed, is faster and more beneficial especially on a larger scale. \
+![Untitled](https://github.com/user-attachments/assets/5c775dc3-b5f7-4530-8c06-886fee44cabb)
+
 
 ## 2.2 Interative methods
 
@@ -211,7 +222,7 @@ where $$h$$ is the grid spacing.
 The eigenvalues $$\lambda_k$$ of the matrix $$D_2$$ are given by:
 
 $$
-\lambda_k = -\frac{4}{h^2} \sin^2\left(\frac{k \pi}{2n}\right),
+\lambda_{i} = 2 - 2 \cos\left(\frac{\pi i}{N + 1}\right),
 $$
 
 where $$k = 1, 2, \dots, n-1$$, and $$n$$ is the number of grid points.
