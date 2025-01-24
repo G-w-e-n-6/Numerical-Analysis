@@ -194,7 +194,6 @@ By implementing a sparse matrix in Python, the result shows as follows.\
 ![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
 
 
-
 Since the matrix of the linear system is a tri-diagonal matrix, it's useful to use a sparse representation where only the entries different from zero are stored. This representation allows us to save memory and computational cost. Usually, Gaussian elimination of an $$n \times n$$ matrix costs $$O(n^3)$$, but for a sparse matrix, we have $$O(n^2)$$ for the 2D Laplacian.
 
 The graph below compares the computational time between the dense and sparse matrix solvers. \
@@ -321,6 +320,7 @@ for $$i, j = 1, 2, \ldots, N$$.
 
 This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenvalues of the 1D Laplacian.
 
+1.
 **Numerical solution of Poisson equation by Jacobi method** \
 ![Untitled-1](https://github.com/user-attachments/assets/c693c1a6-a4b8-47e2-8b2e-2a77117e0676)
 ![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
@@ -336,7 +336,7 @@ This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenv
 ![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
 
 
-
+2.
 We expect these methods to converge because the Laplacian matrix is symmetric and semi-positive definite, since its eigenvalues are non-negative.
 
 $$
@@ -387,7 +387,7 @@ For larger grids, the smallest eigenvalues $$\lambda_i$$ of the Laplacian matrix
 
 
 
-
+3.
 ### **Cost of an Iterative Solver**
 
 The **cost of an iterative solver** depnd on two components:
@@ -418,6 +418,7 @@ For the Jacobi method:
 - Cost per iteration: \( O(N^2) \).
 - Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
 
+4.
 **Numerical solution of Poisson equation by SOR method** \
 ![Untitled](https://github.com/user-attachments/assets/4d05a187-fb2f-4b13-958b-11b3cc61117d)
 ![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
@@ -455,12 +456,14 @@ $$
 \
 $$
 
+5.
 ### **Comparison between the three methods**
 ![Untitled-1](https://github.com/user-attachments/assets/acbd64f4-24f9-46e3-ac7a-6d837283269c)
 
 
 # 3. Extension to solver
 
+4.
 ### **Laplace equation with non-homogeneous boundary condition$$**
 
 A solver has been implemented for the Laplace equation with non-homogeneous boundary condition:
