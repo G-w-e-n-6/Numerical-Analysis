@@ -420,7 +420,7 @@ For the Jacobi method:
 
 **Numerical solution of Poisson equation by SOR method** \
 ![Untitled](https://github.com/user-attachments/assets/4d05a187-fb2f-4b13-958b-11b3cc61117d)
-![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
+![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
 ![Untitled-1](https://github.com/user-attachments/assets/f6e60703-ae8f-4f32-8a04-d569f63870b5)
 ![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
 
@@ -440,6 +440,7 @@ $$
 
 The smaller the spectral radius, the faster the convergence.
 
+### **Comparison between the three methods**
 ![Untitled](https://github.com/user-attachments/assets/f70f58d2-2b95-4a64-ad74-3939fd32404b)
 
 
@@ -452,6 +453,7 @@ $$
 \omega_{\text{opt}} = \frac{2}{1 + \sin\left(\frac{\pi}{n+1}\right)}.
 \
 $$
+
 
 ![Untitled-1](https://github.com/user-attachments/assets/acbd64f4-24f9-46e3-ac7a-6d837283269c)
 
