@@ -461,3 +461,51 @@ $$
 
 # 3. Extension to solver
 
+### **Laplace equation with non-homogeneous boundary condition$$**
+
+A solver has been implemented for the Laplace equation with non-homogeneous boundary condition:
+
+### **Laplace Equation:**
+
+$$
+\
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, \quad \text{for } (x, y) \in (0, 1) \times (0, 1).
+\
+$$
+
+
+### **Boundary Conditions:**
+   $$
+   \
+   u(0, y) = 0, \quad \text{for } y \in [0, 1].
+   \
+   $$
+
+
+
+   $$
+   \
+   u(x, 0) = 0, \quad \text{for } x \in [0, 1].
+   \
+   $$
+
+
+
+   $$
+   \
+   u(1, y) = y, \quad \text{for } y \in [0, 1].
+   \
+   $$
+
+
+
+   $$
+   \
+   u(x, 1) = x, \quad \text{for } x \in [0, 1].
+   \
+   $$
+
+
+
+
+
