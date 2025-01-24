@@ -371,6 +371,37 @@ For the Jacobi method:
 - Cost per iteration: \( O(N^2) \).
 - Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
 
+### **Optimal omega**
+
+The optimal relaxation parameter $$\omega$$ for the Successive Over-Relaxation (SOR) method minimizes the spectral radius of the iteration matrix.
+
+
+The convergence rate of SOR depends on the spectral radius $$\rho(T_{\text{SOR}})$$ where:
+
+$$
+\
+T_{\text{SOR}} = (D - \omega L)^{-1} [(1 - \omega) D + \omega U],
+\
+$$
+
+The smaller the spectral radius, the faster the convergence.
+
+
+
+### **Optimal $$\omega_{\text{opt}}$$**
+For the SOR method, it can be shown that:
+
+$$
+\
+\omega_{\text{opt}} = \frac{2}{1 + \sin\left(\frac{\pi}{n+1}\right)}.
+\
+$$
+
+
+
+
+
+
 
 
 
