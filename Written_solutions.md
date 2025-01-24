@@ -211,3 +211,83 @@ The eigenvalues of the second derivative matrix are related to the zeros of the 
 $$
 x_k = \cos\left(\frac{(2k-1)\pi}{2n}\right), \quad k = 1, 2, \dots, n.
 $$
+
+In the 1D discrete case with Dirichlet boundary conditions, we are solving:
+
+$$
+\
+\frac{v_{k+1} - 2v_k + v_{k-1}}{h^2} = \lambda v_k, \quad k = 1, \ldots, n, \quad v_0 = v_{n+1} = 0.
+\
+$$
+
+Rearranging terms, we obtain:
+
+$$
+\
+v_{k+1} = (2 + h^2 \lambda)v_k - v_{k-1}.
+\
+$$
+
+Let $$2\alpha = 2 + h^2 \lambda$$. Assuming $$v_1 \neq 0$$, we can scale eigenvectors by any nonzero scalar, so scale $$v$$ such that $$v_1 = 1$$.
+
+This leads to the recurrence relation:
+
+$$
+\
+v_0 = 0, \quad v_1 = 1, \quad v_{k+1} = 2\alpha v_k - v_{k-1}.
+\
+$$
+
+Considering \(\alpha\) as an indeterminate, we write:
+
+$$
+\
+v_k = U_k(\alpha),
+\
+$$
+
+where $$U_k$$ is the $$k$$-th Chebyshev polynomial of the second kind.
+
+Since $$v_{n+1} = 0$$, we find:
+
+$$
+\
+U_n(\alpha) = 0.
+\
+$$
+
+Thus, the eigenvalues of the problem correspond to the zeros of the $$n$$-th Chebyshev polynomial of the second kind, with the relation:
+
+$$
+\
+2\alpha = 2 + h^2 \lambda.
+\
+$$
+
+
+
+
+The Kronecker product of two matrices affects their eigenvalues in the following way: if $$A$$ has eigenvalues $$\lambda_i$$ and $$B$$ has eigenvalues $$\mu_j$$, then the Kronecker product $$A \otimes B$$ has eigenvalues $$\lambda_i \mu_j$$.
+
+
+Thus, for the 2D discrete Laplacian $$\Delta_h$$, the eigenvalues can be written as:
+
+$$
+\
+\lambda_{i,j} = \lambda_i + \lambda_j,
+\
+$$
+
+where $$\lambda_i$$ and $$\lambda_j$$ are the eigenvalues of the 1D discrete Laplacian. Therefore, for the 2D case, the eigenvalues $$\lambda_{i,j}$$ of $$\Delta_h$$ are:
+
+$$
+\
+\lambda_{i,j} = 2 - 2 \cos\left(\frac{\pi i}{N + 1}\right) - 2 \cos\left(\frac{\pi j}{N + 1}\right),
+\
+$$
+
+for $$i, j = 1, 2, \ldots, N$$.
+
+This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenvalues of the 1D Laplacian.
+
+
