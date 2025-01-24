@@ -169,12 +169,250 @@ $$
 u(x, 0) = u(x, 1) = u(0, y) = u(1, y) = 0.
 $$
 
-With usage of an algorithm following these presvious steps, the results can be compared as such \
+With usage of an algorithm following these previous steps, the results can be compared as such \
 ![Untitled](https://github.com/user-attachments/assets/c2b30609-c7a0-4e2f-8924-da48d591001a) 
 
 It is obvious that there are practically identical to each other, which implies a good solution.
 
-The relative error equals $\frac{||u-u_{exact}||}{||u_{exact}||}$ \
-The expected convergence rate is $O(h^2)$
+The relative error compares the exact solution with the matrix calculated one and equals
+
+$$\frac{\| u - u_{\text{exact}} \|\_{\infty}}{\| u_{\text{exact}} \|_{\infty}}$$
+
+with $\representing the maximum norm of $\Omega$
+
+The expected convergence rate is $O(h^2)$ because of the accuracy of the 2nd order finite derivative formula.
 \
 ![Untitled](https://github.com/user-attachments/assets/4127f8c7-9e37-4b3c-9cbc-19f47f06736a)
+
+
+# 2. Solving the linear system
+
+## 2.1 Direct methods
+
+Since the matrix of the linear system is a tri-diagonal matrix, it's useful to use a sparse representation where only the entries different from zero are stored. This representation allows us to save memory and computational cost. Usually, Gaussian elimination of an $$n \times n$$ matrix costs $$O(n^3)$$, but for a sparse matrix, we have $$O(n^2)$$ for the 2D Laplacian.
+
+## 2.2 Interative methods
+
+The second derivative approximation on a uniform grid using finite differences can be expressed as:
+
+$$
+D_2 = \frac{1}{h^2}
+\begin{bmatrix}
+-2 & 1 & 0 & \cdots & 0 \\
+1 & -2 & 1 & \cdots & 0 \\
+0 & 1 & -2 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & 1 \\
+0 & 0 & 0 & 1 & -2
+\end{bmatrix},
+$$
+
+where $$h$$ is the grid spacing.
+
+The eigenvalues $$\lambda_k$$ of the matrix $$D_2$$ are given by:
+
+$$
+\lambda_k = -\frac{4}{h^2} \sin^2\left(\frac{k \pi}{2n}\right),
+$$
+
+where $$k = 1, 2, \dots, n-1$$, and $$n$$ is the number of grid points.
+
+The Chebyshev polynomials of the first kind, $$T_n(x)$$, satisfy the recurrence relation:
+
+$$
+T_0(x) = 1, \quad T_1(x) = x,
+$$
+
+$$
+T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x), \quad n \geq 1.
+$$
+
+The eigenvalues of the second derivative matrix are related to the zeros of the Chebyshev polynomials $$T_n(x)$$ through the relation:
+
+$$
+x_k = \cos\left(\frac{(2k-1)\pi}{2n}\right), \quad k = 1, 2, \dots, n.
+$$
+
+In the 1D discrete case with Dirichlet boundary conditions, we are solving:
+
+$$
+\
+\frac{v_{k+1} - 2v_k + v_{k-1}}{h^2} = \lambda v_k, \quad k = 1, \ldots, n, \quad v_0 = v_{n+1} = 0.
+\
+$$
+
+Rearranging terms, we obtain:
+
+$$
+\
+v_{k+1} = (2 + h^2 \lambda)v_k - v_{k-1}.
+\
+$$
+
+Let $$2\alpha = 2 + h^2 \lambda$$. Assuming $$v_1 \neq 0$$, we can scale eigenvectors by any nonzero scalar, so scale $$v$$ such that $$v_1 = 1$$.
+
+This leads to the recurrence relation:
+
+$$
+\
+v_0 = 0, \quad v_1 = 1, \quad v_{k+1} = 2\alpha v_k - v_{k-1}.
+\
+$$
+
+Considering \(\alpha\) as an indeterminate, we write:
+
+$$
+\
+v_k = U_k(\alpha),
+\
+$$
+
+where $$U_k$$ is the $$k$$-th Chebyshev polynomial of the second kind.
+
+Since $$v_{n+1} = 0$$, we find:
+
+$$
+\
+U_n(\alpha) = 0.
+\
+$$
+
+Thus, the eigenvalues of the problem correspond to the zeros of the $$n$$-th Chebyshev polynomial of the second kind, with the relation:
+
+$$
+\
+2\alpha = 2 + h^2 \lambda.
+\
+$$
+
+
+
+
+The Kronecker product of two matrices affects their eigenvalues in the following way: if $$A$$ has eigenvalues $$\lambda_i$$ and $$B$$ has eigenvalues $$\mu_j$$, then the Kronecker product $$A \otimes B$$ has eigenvalues $$\lambda_i \mu_j$$.
+
+
+Thus, for the 2D discrete Laplacian $$\Delta_h$$, the eigenvalues can be written as:
+
+$$
+\
+\lambda_{i,j} = \lambda_i + \lambda_j,
+\
+$$
+
+where $$\lambda_i$$ and $$\lambda_j$$ are the eigenvalues of the 1D discrete Laplacian. Therefore, for the 2D case, the eigenvalues $$\lambda_{i,j}$$ of $$\Delta_h$$ are:
+
+$$
+\
+\lambda_{i,j} = 2 - 2 \cos\left(\frac{\pi i}{N + 1}\right) - 2 \cos\left(\frac{\pi j}{N + 1}\right),
+\
+$$
+
+for $$i, j = 1, 2, \ldots, N$$.
+
+This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenvalues of the 1D Laplacian.
+
+We expect these methods to converge because the Laplacian matrix is symmetric and semi-positive definite, since its eigenvalues are non-negative.
+
+$$
+\
+\lambda_{i} = 2 - 2 \cos\left(\frac{\pi i}{N + 1}\right)
+\
+$$
+
+The maximum of the absolute value of $$2 \cos\left(\frac{\pi i}{N + 1}\right)$$ is 2, so the eigenvalues are non-negative.
+
+As the grid size increases, the smallest eigenvalue of the Laplacian approach zero.This increases the condition number of the matrix, leading to a spectral radius closer to 1, which slowes down convergence. 
+
+The **convergence radius** of an iterative method is determined by the **spectral radius** of the iteration matrix \( T \), defined as the largest absolute value of its eigenvalues. 
+
+For the iterative methods applied to the discrete Poisson problem, the convergence radius is:
+
+$$
+\
+\rho(T) = \max |\lambda_i(T)|,
+\
+$$
+
+where $$\lambda_i(T)$$ are the eigenvalues of the iteration matrix $$T$$.
+
+###  Jacobi Method
+The iteration matrix for Jacobi is:
+
+$$
+\
+T_J = D^{-1}(L + U),
+\
+$$
+
+where  $$D$$  is the diagonal part, and  $$L$$  and $$U$$  are the lower and upper triangular parts of the system matrix 
+
+For the discrete Poisson problem, the convergence radius is:
+
+$$
+\
+\rho(T_J) = \max \left| 1 - \frac{h^2 \lambda_i}{2} \right|,
+\
+$$
+
+
+For larger grids, the smallest eigenvalues $$\lambda_i$$ of the Laplacian matrix approach zero, making $$\rho(T)$$ approach 1. This causes slower convergence for all methods, especially Jacobi and Gauss-Seidel.
+
+
+
+
+
+
+### **Cost of an Iterative Solver**
+
+The **cost of an iterative solver** depnd on two components:
+
+1. **Cost per iteration**: The computational cost of performing a single iteration of the method.
+2. **Number of iterations**: The total number of iterations required for the iterative solver to converge. 
+
+
+
+#### Example: Jacobi Method
+- The Jacobi method involves matrix-vector multiplications. The system matrix \( A \) (e.g., the discrete Laplacian) is sparse for PDEs like the Poisson equation, typically with \( O(N^2) \) unknowns in 2D for a grid of size $$N \times N$$.
+- The sparsity of \( A \) means it has \( O(N^2) \) nonzero entries for a 5-point stencil.
+- **Operations per iteration**:
+  - A sparse matrix-vector multiplication costs \( O(N^2) \) operations.
+  - Some additional vector operations (addition, scaling) are \( O(N^2) \).
+- **Total cost per iteration**: \( O(N^2) \).
+
+
+The **total cost** is the product of the cost per iteration and the number of iterations:
+
+$$
+\
+\text{Total Cost} = \text{Cost per Iteration} \times \text{Number of Iterations}.
+\
+$$
+
+For the Jacobi method:
+- Cost per iteration: \( O(N^2) \).
+- Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
+
+### **Optimal omega**
+
+The optimal relaxation parameter $$\omega$$ for the Successive Over-Relaxation (SOR) method minimizes the spectral radius of the iteration matrix.
+
+
+The convergence rate of SOR depends on the spectral radius $$\rho(T_{\text{SOR}})$$ where:
+
+$$
+\
+T_{\text{SOR}} = (D - \omega L)^{-1} [(1 - \omega) D + \omega U],
+\
+$$
+
+The smaller the spectral radius, the faster the convergence.
+
+
+
+### **Optimal $$\omega_{\text{opt}}$$**
+For the SOR method, it can be shown that:
+
+$$
+\
+\omega_{\text{opt}} = \frac{2}{1 + \sin\left(\frac{\pi}{n+1}\right)}.
+\
+$$
