@@ -88,3 +88,28 @@ f_{n-1} - D u_n
 $$
 
 Since $u(x,1) = u(x, 0) = u(1, y) = u(0,y) = 0 $, our vector **b** is a zero-vector the size of $(N_y - 1)^2$
+
+The exact solution we are solving is given by:
+
+$$
+\
+u(x, y) = \sin^2(\pi x) \sin^2(\pi y).
+\
+$$
+
+The corresponding Poisson equation is:
+
+$$
+\
+-\Delta u(x, y) = f(x, y),
+\
+$$ 
+
+
+Substituting the exact solution \(u(x, y)\) into the Laplacian, the right-hand side \(f(x, y)\) is derived as:
+
+$$
+\
+f(x, y) = 2\pi^2 \left( \cos(2\pi x) \sin^2(\pi y) + \cos(2\pi y) \sin^2(\pi x) \right).
+\
+$$
