@@ -126,3 +126,42 @@ $$
 f(x, y) = 2\pi^2 \left( \cos(2\pi x) \sin^2(\pi y) + \cos(2\pi y) \sin^2(\pi x) \right).
 \
 $$
+
+The exact solution is given by:
+
+$$
+u_{ex}(x, y) = \sin^2(\pi x) \sin^2(\pi y).
+$$
+
+We verify that $ u_{ex}(x, y) $ satisfies the boundary conditions:
+
+1. At  x = 0 :
+
+$$
+u_{ex}(0, y) = \sin^2(\pi \cdot 0) \sin^2(\pi y) = 0.
+$$
+
+2. At  x = 1 :
+   
+$$
+u_{ex}(1, y) = \sin^2(\pi \cdot 1) \sin^2(\pi y) = \sin^2(\pi) \sin^2(\pi y) = 0.
+$$
+
+4. At  y = 0 :
+
+$$
+u_{ex}(x, 0) = \sin^2(\pi x) \sin^2(\pi \cdot 0) = 0.
+$$
+
+5. At  y = 1 :
+
+$$
+u_{ex}(x, 1) = \sin^2(\pi x) \sin^2(\pi \cdot 1) = \sin^2(\pi x) \sin^2(\pi) = 0.
+$$
+
+Hence, $$u_{ex}(x, y)$$ is consistent with the boundary conditions:
+
+$$
+u(x, 0) = u(x, 1) = u(0, y) = u(1, y) = 0.
+$$
+
