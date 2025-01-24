@@ -269,7 +269,7 @@ v_0 = 0, \quad v_1 = 1, \quad v_{k+1} = 2\alpha v_k - v_{k-1}.
 \
 $$
 
-Considering \(\alpha\) as an indeterminate, we write:
+Considering $\alpha$ as an indeterminate, we write:
 
 $$
 \
@@ -320,6 +320,13 @@ $$
 for $$i, j = 1, 2, \ldots, N$$.
 
 This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenvalues of the 1D Laplacian.
+
+**Numerical solution of Poisson equation by Jacobi method** \
+![Untitled-1](https://github.com/user-attachments/assets/c693c1a6-a4b8-47e2-8b2e-2a77117e0676)
+![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
+
+**Numerical solution of Poisson equation by Gauss-Seidel method** \
+
 
 We expect these methods to converge because the Laplacian matrix is symmetric and semi-positive definite, since its eigenvalues are non-negative.
 
