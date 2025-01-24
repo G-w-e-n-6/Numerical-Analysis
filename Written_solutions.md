@@ -490,3 +490,48 @@ $$
 w(x_i, y_j) - w_{ij}(h_1, h_2) = O(h_1^2 + h_2^2), \quad (i,j) \in \omega.
 $$
 
+$$
+r_{ij} = e_{ij} + h_1^2 v_{ij} + h_2^2 w_{ij}.
+$$
+
+Multiplying both sides by $$h_1^2$$ and $$h_2^2$$, then summing the obtained results, we obtain:
+
+$$
+-(\delta_x^2 r_{ij} + \delta_y^2 r_{ij}) = - \frac{h_1^4}{360} \frac{\partial^6 u(\xi_{ij}, y_j)}{\partial x^6} - \frac{h_2^4}{360} \frac{\partial^6 u(x_i, \eta_{ij})}{\partial y^6}, \quad (i,j) \in \omega.
+$$
+
+$$
+r_{ij} = 0, \quad (i,j) \in \gamma.
+$$
+
+By Theorem 2.4, we obtain:
+
+$$
+r_{ij} = O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
+$$
+
+That is,
+
+$$
+u_{ij}(h_1, h_2) = u(x_i, y_j) + h_1^2 v_{ij}(h_1, h_2) + h_2^2 w_{ij}(h_1, h_2) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
+$$
+
+Then we have:
+
+$$
+u_{ij}(h_1, h_2) = u(x_i, y_j) + h_1^2 v(x_i, y_j) + h_2^2 w(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega. \quad (2.2.39)
+$$
+
+Similarly, we obtain:
+
+$$
+u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) = u(x_i, y_j) + \left( \frac{h_1}{2} \right)^2 v(x_i, y_j) + \left( \frac{h_2}{2} \right)^2 w(x_i, y_j)+ O \left( \left( \frac{h_1}{2} \right)^4 + \left( \frac{h_2}{2} \right)^4 \right), \quad (i,j) \in \omega. \quad 
+$$
+
+Multiplying both sides of (2.2.40) by 4/3, and both sides of (2.2.39) by 1/3, then subtracting the obtained results, we obtain:
+
+$$
+\frac{4}{3} u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) - \frac{1}{3} u_{ij}(h_1, h_2) = u(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
+$$
+
+
