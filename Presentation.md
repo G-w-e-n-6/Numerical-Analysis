@@ -14,8 +14,9 @@ Convergence plot:
 Computational time: No problems for lower values but the higher the values the exponentially many issues arise
 
 Solution of the poisson equation using a sparse matrix
-![Untitled](https://github.com/user-attachments/assets/085f68e8-afac-46ec-aa83-5891538401ee)
+
+
 
 Computational time of both methods:
-![Untitled](https://github.com/user-attachments/assets/5e25e0c1-5f65-4362-8b28-86dc1d469591)
+![Untitled](https://github.com/user-attachments/assets/5c775dc3-b5f7-4530-8c06-886fee44cabb)
 
