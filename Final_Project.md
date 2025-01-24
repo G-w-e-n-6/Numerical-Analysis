@@ -440,7 +440,8 @@ $$
 
 The smaller the spectral radius, the faster the convergence.
 
-### **Comparison between the three methods**
+
+
 ![Untitled](https://github.com/user-attachments/assets/f70f58d2-2b95-4a64-ad74-3939fd32404b)
 
 
@@ -454,6 +455,6 @@ $$
 \
 $$
 
-
+### **Comparison between the three methods**
 ![Untitled-1](https://github.com/user-attachments/assets/acbd64f4-24f9-46e3-ac7a-6d837283269c)
 
