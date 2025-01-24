@@ -1,3 +1,4 @@
+# 1.1 Designing the solver
 
 2.
 The finite difference formula for the second order derivative is as follows
@@ -51,7 +52,7 @@ D =
 $$
 
 $$
-f_j = 
+f_j = f + b =
 \begin{pmatrix}
 f(x_1, y_j) + \frac{1}{h_1^2} \varphi(x_0, y_j) \\
 f(x_2, y_j) \\
@@ -87,7 +88,19 @@ f_{n-1} - D u_n
 \end{pmatrix}.
 $$
 
-Since $u(x,1) = u(x, 0) = u(1, y) = u(0,y) = 0 $, our vector **b** is a zero-vector the size of $(N_y - 1)^2$
+Since $u(x,1) = u(x, 0) = u(1, y) = u(0,y) = 0 $, the vector **b** is a zero-vector the size of $(N_y - 1)^2$. \
+For a procedure with a non-zero boundary, the vector ressembles
+
+$$ b =
+\begin{pmatrix}
+D u_0 \\
+0 \\
+\vdots \\
+0 \\
+D u_n
+\end{pmatrix} $$
+
+# 1.2 Validation of the implementation
 
 The exact solution we are solving is given by:
 
