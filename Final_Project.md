@@ -324,6 +324,10 @@ This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenv
 **Numerical solution of Poisson equation by Jacobi method** \
 ![Untitled-1](https://github.com/user-attachments/assets/c693c1a6-a4b8-47e2-8b2e-2a77117e0676)
 ![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
+![Untitled](https://github.com/user-attachments/assets/b785bd7f-cbbc-46df-b945-9eaca749d958)
+![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
+
+
 
 **Numerical solution of Poisson equation by Gauss-Seidel method** \
 
