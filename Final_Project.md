@@ -458,3 +458,6 @@ $$
 ### **Comparison between the three methods**
 ![Untitled-1](https://github.com/user-attachments/assets/acbd64f4-24f9-46e3-ac7a-6d837283269c)
 
+
+# 3. Extension to solver
+
