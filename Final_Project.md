@@ -505,6 +505,8 @@ $$
    \
    $$
 
+![Untitled](https://github.com/user-attachments/assets/74d6026a-2ac3-444f-9e52-bc182f3b3ef0) \
+![Untitled-1](https://github.com/user-attachments/assets/c463e7ad-3f5e-4382-b168-693a9cb93e21)
 
 
 
