@@ -290,4 +290,13 @@ for $$i, j = 1, 2, \ldots, N$$.
 
 This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenvalues of the 1D Laplacian.
 
+We expect these methods to converge because the Laplacian matrix is symmetric and semi-positive definite, since its eigenvalues are non-negative.
+
+$$
+\
+\lambda_{i} = 2 - 2 \cos\left(\frac{\pi i}{N + 1}\right)
+\
+$$
+
+The maximum of the absolute value of $$2 \cos\left(\frac{\pi i}{N + 1}\right)$$ is 2, so the eigenvalues are non-negative.
 
