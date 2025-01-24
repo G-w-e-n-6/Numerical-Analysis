@@ -126,3 +126,88 @@ $$
 f(x, y) = 2\pi^2 \left( \cos(2\pi x) \sin^2(\pi y) + \cos(2\pi y) \sin^2(\pi x) \right).
 \
 $$
+
+The exact solution is given by:
+
+$$
+u_{ex}(x, y) = \sin^2(\pi x) \sin^2(\pi y).
+$$
+
+We verify that $ u_{ex}(x, y) $ satisfies the boundary conditions:
+
+1. At  x = 0 :
+
+$$
+u_{ex}(0, y) = \sin^2(\pi \cdot 0) \sin^2(\pi y) = 0.
+$$
+
+2. At  x = 1 :
+   
+$$
+u_{ex}(1, y) = \sin^2(\pi \cdot 1) \sin^2(\pi y) = \sin^2(\pi) \sin^2(\pi y) = 0.
+$$
+
+4. At  y = 0 :
+
+$$
+u_{ex}(x, 0) = \sin^2(\pi x) \sin^2(\pi \cdot 0) = 0.
+$$
+
+5. At  y = 1 :
+
+$$
+u_{ex}(x, 1) = \sin^2(\pi x) \sin^2(\pi \cdot 1) = \sin^2(\pi x) \sin^2(\pi) = 0.
+$$
+
+Hence, $$u_{ex}(x, y)$$ is consistent with the boundary conditions:
+
+$$
+u(x, 0) = u(x, 1) = u(0, y) = u(1, y) = 0.
+$$
+
+# 2. Sovling the linear system
+
+## 2.1 Direct methods
+
+Since the matrix of the linear system is a tri-diagonal matrix, it's useful to use a sparse representation where only the entries different from zero are stored. This representation allows us to save memory and computational cost. Usually, Gaussian elimination of an $$n \times n$$ matrix costs $$O(n^3)$$, but for a sparse matrix, we have $$O(n^2)$$ for the 2D Laplacian.
+
+## 2.2 Interative methods
+
+The second derivative approximation on a uniform grid using finite differences can be expressed as:
+
+$$
+D_2 = \frac{1}{h^2}
+\begin{bmatrix}
+-2 & 1 & 0 & \cdots & 0 \\
+1 & -2 & 1 & \cdots & 0 \\
+0 & 1 & -2 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & 1 \\
+0 & 0 & 0 & 1 & -2
+\end{bmatrix},
+$$
+
+where $$h$$ is the grid spacing.
+
+The eigenvalues $$\lambda_k$$ of the matrix $$D_2$$ are given by:
+
+$$
+\lambda_k = -\frac{4}{h^2} \sin^2\left(\frac{k \pi}{2n}\right),
+$$
+
+where $$k = 1, 2, \dots, n-1$$, and $$n$$ is the number of grid points.
+
+The Chebyshev polynomials of the first kind, $$T_n(x)$$, satisfy the recurrence relation:
+
+$$
+T_0(x) = 1, \quad T_1(x) = x,
+$$
+
+$$
+T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x), \quad n \geq 1.
+$$
+
+The eigenvalues of the second derivative matrix are related to the zeros of the Chebyshev polynomials $$T_n(x)$$ through the relation:
+
+$$
+x_k = \cos\left(\frac{(2k-1)\pi}{2n}\right), \quad k = 1, 2, \dots, n.
+$$
