@@ -186,7 +186,7 @@ D_2 = \frac{1}{h^2}
 \end{bmatrix},
 $$
 
-where $$h$$is the grid spacing.
+where $$h$$ is the grid spacing.
 
 The eigenvalues $$\lambda_k$$ of the matrix $$D_2$$ are given by:
 
