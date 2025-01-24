@@ -330,6 +330,11 @@ This expression gives the eigenvalues of the 2D Laplacian in terms of the eigenv
 
 
 **Numerical solution of Poisson equation by Gauss-Seidel method** \
+![Untitled](https://github.com/user-attachments/assets/8a9282f8-ed42-40cd-9bf1-35e4cb9fc133)
+![Untitled](https://github.com/user-attachments/assets/c3bb18a4-f688-40eb-99bc-d16f652cd0cd)
+![Untitled-1](https://github.com/user-attachments/assets/09d825ed-4a43-4178-8009-c2f7ced00557)
+![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
+
 
 
 We expect these methods to converge because the Laplacian matrix is symmetric and semi-positive definite, since its eigenvalues are non-negative.
