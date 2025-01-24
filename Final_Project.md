@@ -418,6 +418,13 @@ For the Jacobi method:
 - Cost per iteration: \( O(N^2) \).
 - Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
 
+**Numerical solution of Poisson equation by SOR method** \
+![Untitled](https://github.com/user-attachments/assets/4d05a187-fb2f-4b13-958b-11b3cc61117d)
+![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
+![Untitled-1](https://github.com/user-attachments/assets/f6e60703-ae8f-4f32-8a04-d569f63870b5)
+![Untitled-1](https://github.com/user-attachments/assets/3c982afa-408e-416d-8a4f-4938e86de54a)
+
+
 ### **Optimal omega**
 
 The optimal relaxation parameter $$\omega$$ for the Successive Over-Relaxation (SOR) method minimizes the spectral radius of the iteration matrix.
@@ -433,6 +440,8 @@ $$
 
 The smaller the spectral radius, the faster the convergence.
 
+![Untitled](https://github.com/user-attachments/assets/f70f58d2-2b95-4a64-ad74-3939fd32404b)
+
 
 
 ### **Optimal $$\omega_{\text{opt}}$$**
@@ -443,3 +452,6 @@ $$
 \omega_{\text{opt}} = \frac{2}{1 + \sin\left(\frac{\pi}{n+1}\right)}.
 \
 $$
+
+![Untitled-1](https://github.com/user-attachments/assets/acbd64f4-24f9-46e3-ac7a-6d837283269c)
+
