@@ -86,3 +86,5 @@ f_{n-2} \\
 f_{n-1} - D u_n
 \end{pmatrix}.
 $$
+
+Since $u(x,1) = u(x, 0) = u(1, y) = u(0,y) = 0 $, our vector b is a zero-vector the size of $(N_y - 1)^2$
