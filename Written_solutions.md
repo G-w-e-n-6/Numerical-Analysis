@@ -534,4 +534,62 @@ $$
 \frac{4}{3} u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) - \frac{1}{3} u_{ij}(h_1, h_2) = u(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
 $$
 
+#### 3.1.2 Construction of the Difference Scheme
+
+In this section, we establish a difference scheme with an accuracy of $$O(h_1^4 + h_2^4)$$ for solving the boundary value problems (2.1.1) and (2.1.2).  
+Let $$v = \{v_{ij} \mid 0 \leq i \leq m, 0 \leq j \leq n\}$$. Define the operators as follows:
+
+$$
+(Av)_{ij} =
+- (1/12) * (v_{i-1,j} + 10v_{ij} + v_{i+1,j}), when 1 <= i <= m-1, 0 <= j <= n
+- v_{ij}, when i = 0, 0 <= j <= n
+$$
+
+$$
+(Bv)_{ij} =
+- (1/12) * (v_{i,j-1} + 10v_{ij} + v_{i,j+1}), when 1 <= j <= n-1, 0 <= i <= m
+- v_{ij}, when j = 0, 0 <= i <= m
+$$
+
+To avoid ambiguity, denote $$A v_{ij}$$ and $$B v_{ij}$$ for simplicity.  
+
+At the grid point $$(x_i, y_j)$$, the differential equation (2.1.1) is:
+
+$$
+-\frac{\partial^2 u}{\partial x^2}(x_i, y_j) - \frac{\partial^2 u}{\partial y^2}(x_i, y_j) = f(x_i, y_j), \quad 0 \leq i \leq m, \; 0 \leq j \leq n.
+$$
+
+Applying the operator \(AB\) gives:
+
+$$
+-A B \frac{\partial^2 u}{\partial x^2}(x_i, y_j) - A B \frac{\partial^2 u}{\partial y^2}(x_i, y_j) = AB f(x_i, y_j), \quad 1 \leq i \leq m-1, \; 1 \leq j \leq n-1.
+$$
+
+This can be rewritten as:
+
+$$
+-B \left(A \frac{\partial^2 u}{\partial x^2}(x_i, y_j)\right) - A \left(B \frac{\partial^2 u}{\partial y^2}(x_i, y_j)\right) = -AB f(x_i, y_j), \quad 1 \leq i \leq m-1, \; 1 \leq j \leq n-1. 
+$$
+
+By Lemma 1.2(g), we have:
+
+$$
+A \frac{\partial^2 u}{\partial x^2}(x_i, y_j) = \delta_x^2 u_{ij} + \frac{h_1^4}{240} \frac{\partial^6 u}{\partial x^6}(\xi_{ij}), \quad 1 \leq i \leq m-1, \; 0 \leq j \leq n, 
+$$
+
+$$
+B \frac{\partial^2 u}{\partial y^2}(x_i, y_j) = \delta_y^2 u_{ij} + \frac{h_2^4}{240} \frac{\partial^6 u}{\partial y^6}(\eta_{ij}), \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1. 
+$$
+
+Here, $$\xi_{ij} \in (x_{i-1}, x_{i+1})\), \(\eta_{ij} \in (y_{j-1}, y_{j+1}$$.
+
+Define:
+
+$$
+P_{ij} = \frac{h_1^4}{240} \frac{\partial^6 u}{\partial x^6}(\xi_{ij}), \quad 1 \leq i \leq m-1, \; 0 \leq j \leq n, 
+$$
+
+$$
+Q_{ij} = \frac{h_2^4}{240} \frac{\partial^6 u}{\partial y^6}(\eta_{ij}), \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1.
+$$
 
