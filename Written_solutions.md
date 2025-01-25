@@ -593,3 +593,62 @@ $$
 Q_{ij} = \frac{h_2^4}{240} \frac{\partial^6 u}{\partial y^6}(\eta_{ij}), \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1.
 $$
 
+From equations (2.3.2) and (2.3.3), we obtain:
+
+$$
+A \frac{\partial^2 u}{\partial x^2}(x_i, y_j) = \delta_x^2 U_{ij} + P_{ij}, \quad 1 \leq i \leq m-1, \; 0 \leq j \leq n.
+$$
+
+$$
+B \frac{\partial^2 u}{\partial y^2}(x_i, y_j) = \delta_y^2 U_{ij} + Q_{ij}, \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1.
+$$
+
+Substituting the above two equations into (2.3.1), we get:
+
+$$
+-\left[B\left(\delta_x^2 U_{ij} + P_{ij}\right) + A\left(\delta_y^2 U_{ij} + Q_{ij}\right)\right] = AB f_{ij}, \quad (i, j) \in \omega.
+$$
+
+This simplifies to:
+
+$$
+-\left(B \delta_x^2 U_{ij} + A \delta_y^2 U_{ij}\right) = AB f_{ij} + R_{ij}, \quad (i, j) \in \omega, \tag{2.3.6}
+$$
+
+where:
+
+$$
+R_{ij} = B P_{ij} + A Q_{ij}, \quad (i, j) \in \omega. 
+$$
+
+Considering the boundary conditions (2.1.2), we have:
+
+$$
+U_{ij} = \varphi(x_i, y_j), \quad (i, j) \in \gamma. 
+$$
+
+Neglecting the small term \(R_{ij}\) in (2.3.6) and noting (2.3.8), replacing \(u_{ij}\) with \(U_{ij}\), we obtain the following difference scheme:
+
+$$
+-\left(B \delta_x^2 u_{ij} + A \delta_y^2 u_{ij}\right) = AB f_{ij}, \quad (i, j) \in \omega, 
+$$
+
+$$
+u_{ij} = \varphi(x_i, y_j), \quad (i, j) \in \gamma.
+$$
+
+Define:
+
+$$
+M_6 = \max \left\{
+\max_{(x, y) \in \Omega} \left|\frac{\partial^6 u(x, y)}{\partial x^6}\right|, 
+\max_{(x, y) \in \Omega} \left|\frac{\partial^6 u(x, y)}{\partial y^6}\right|
+\right\}. 
+$$
+
+From equations (2.3.7), (2.3.4), and (2.3.5), we know:
+
+$$
+|R_{ij}| \leq \frac{1}{240} M_6 \left(h_1^4 + h_2^4\right), \quad (i, j) \in \omega. 
+$$
+
