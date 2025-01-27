@@ -368,7 +368,7 @@ $$
 $$
 
 For the Jacobi method:
-- Cost per iteration: \( O(N^2) \).
+- Cost per iteration: $$O(N^2)$$.
 - Number of iterations: Depends on $$\rho(T_J)$$ and the grid size $$N$$.
 
 ### **Optimal omega**
@@ -504,7 +504,7 @@ $$
 r_{ij} = 0, \quad (i,j) \in \gamma.
 $$
 
-By Theorem 2.4, we obtain:
+By Theorem, we obtain:
 
 $$
 r_{ij} = O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
