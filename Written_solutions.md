@@ -539,17 +539,8 @@ $$
 In this section, we establish a difference scheme with an accuracy of $$O(h_1^4 + h_2^4)$$ for solving the boundary value problems.  
 Let $$v = \{v_{ij} \mid 0 \leq i \leq m, 0 \leq j \leq n\}$$. Define the operators as follows:
 
-$$
-(Av)_{ij} =
-- (1/12) * (v_{i-1,j} + 10v_{ij} + v_{i+1,j}), when 1 <= i <= m-1, 0 <= j <= n
-- v_{ij}, when i = 0, 0 <= j <= n
-$$
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/d28fee43-dc36-4935-8e31-7e4509368c5e" />
 
-$$
-(Bv)_{ij} =
-- (1/12) * (v_{i,j-1} + 10v_{ij} + v_{i,j+1}), when 1 <= j <= n-1, 0 <= i <= m
-- v_{ij}, when j = 0, 0 <= i <= m
-$$
 
 To avoid ambiguity, denote $$A v_{ij}$$ and $$B v_{ij}$$ for simplicity.  
 
