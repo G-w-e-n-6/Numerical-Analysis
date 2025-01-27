@@ -519,16 +519,16 @@ $$
 Then we have:
 
 $$
-u_{ij}(h_1, h_2) = u(x_i, y_j) + h_1^2 v(x_i, y_j) + h_2^2 w(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega. \quad (2.2.39)
+u_{ij}(h_1, h_2) = u(x_i, y_j) + h_1^2 v(x_i, y_j) + h_2^2 w(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega. 
 $$
 
 Similarly, we obtain:
 
 $$
-u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) = u(x_i, y_j) + \left( \frac{h_1}{2} \right)^2 v(x_i, y_j) + \left( \frac{h_2}{2} \right)^2 w(x_i, y_j)+ O \left( \left( \frac{h_1}{2} \right)^4 + \left( \frac{h_2}{2} \right)^4 \right), \quad (i,j) \in \omega. \quad 
+u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) = u(x_i, y_j) + \left( \frac{h_1}{2} \right)^2 v(x_i, y_j) + \left( \frac{h_2}{2} \right)^2 w(x_i, y_j)+ O \left( \left( \frac{h_1}{2} \right)^4 + \left( \frac{h_2}{2} \right)^4 \right), \quad (i,j) \in \omega. 
 $$
 
-Multiplying both sides of (2.2.40) by 4/3, and both sides of (2.2.39) by 1/3, then subtracting the obtained results, we obtain:
+Multiplying both sides of by 4/3, and by 1/3, then subtracting the obtained results, we obtain:
 
 $$
 \frac{4}{3} u_{2i,2j} \left(\frac{h_1}{2}, \frac{h_2}{2} \right) - \frac{1}{3} u_{ij}(h_1, h_2) = u(x_i, y_j) + O(h_1^4 + h_2^4), \quad (i,j) \in \omega.
