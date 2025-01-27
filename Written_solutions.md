@@ -351,12 +351,12 @@ The **cost of an iterative solver** depnd on two components:
 
 
 #### Example: Jacobi Method
-- The Jacobi method involves matrix-vector multiplications. The system matrix \( A \) (e.g., the discrete Laplacian) is sparse for PDEs like the Poisson equation, typically with \( O(N^2) \) unknowns in 2D for a grid of size $$N \times N$$.
-- The sparsity of \( A \) means it has \( O(N^2) \) nonzero entries for a 5-point stencil.
+- The Jacobi method involves matrix-vector multiplications. The system matrix $$A$$ (e.g., the discrete Laplacian) is sparse for PDEs like the Poisson equation, typically with $$O(N^2)$$ unknowns in 2D for a grid of size $$N \times N$$.
+- The sparsity of $$A$$ means it has $$O(N^2)$$ nonzero entries for a 5-point stencil.
 - **Operations per iteration**:
-  - A sparse matrix-vector multiplication costs \( O(N^2) \) operations.
-  - Some additional vector operations (addition, scaling) are \( O(N^2) \).
-- **Total cost per iteration**: \( O(N^2) \).
+  - A sparse matrix-vector multiplication costs $$O(N^2)$$ operations.
+  - Some additional vector operations (addition, scaling) are $$O(N^2)$$.
+- **Total cost per iteration**: $$O(N^2)$$.
 
 
 The **total cost** is the product of the cost per iteration and the number of iterations:
