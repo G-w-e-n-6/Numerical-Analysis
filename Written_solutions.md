@@ -536,7 +536,7 @@ $$
 
 #### 3.1.2 Construction of the Difference Scheme
 
-In this section, we establish a difference scheme with an accuracy of $$O(h_1^4 + h_2^4)$$ for solving the boundary value problems (2.1.1) and (2.1.2).  
+In this section, we establish a difference scheme with an accuracy of $$O(h_1^4 + h_2^4)$$ for solving the boundary value problems.  
 Let $$v = \{v_{ij} \mid 0 \leq i \leq m, 0 \leq j \leq n\}$$. Define the operators as follows:
 
 $$
@@ -571,7 +571,7 @@ $$
 -B \left(A \frac{\partial^2 u}{\partial x^2}(x_i, y_j)\right) - A \left(B \frac{\partial^2 u}{\partial y^2}(x_i, y_j)\right) = -AB f(x_i, y_j), \quad 1 \leq i \leq m-1, \; 1 \leq j \leq n-1. 
 $$
 
-By Lemma 1.2(g), we have:
+By Lemma, we have:
 
 $$
 A \frac{\partial^2 u}{\partial x^2}(x_i, y_j) = \delta_x^2 u_{ij} + \frac{h_1^4}{240} \frac{\partial^6 u}{\partial x^6}(\xi_{ij}), \quad 1 \leq i \leq m-1, \; 0 \leq j \leq n, 
@@ -593,7 +593,7 @@ $$
 Q_{ij} = \frac{h_2^4}{240} \frac{\partial^6 u}{\partial y^6}(\eta_{ij}), \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1.
 $$
 
-From equations (2.3.2) and (2.3.3), we obtain:
+From equations, we obtain:
 
 $$
 A \frac{\partial^2 u}{\partial x^2}(x_i, y_j) = \delta_x^2 U_{ij} + P_{ij}, \quad 1 \leq i \leq m-1, \; 0 \leq j \leq n.
@@ -603,7 +603,7 @@ $$
 B \frac{\partial^2 u}{\partial y^2}(x_i, y_j) = \delta_y^2 U_{ij} + Q_{ij}, \quad 0 \leq i \leq m, \; 1 \leq j \leq n-1.
 $$
 
-Substituting the above two equations into (2.3.1), we get:
+Substituting the above two equations into, we get:
 
 $$
 -\left[B\left(\delta_x^2 U_{ij} + P_{ij}\right) + A\left(\delta_y^2 U_{ij} + Q_{ij}\right)\right] = AB f_{ij}, \quad (i, j) \in \omega.
@@ -612,7 +612,7 @@ $$
 This simplifies to:
 
 $$
--\left(B \delta_x^2 U_{ij} + A \delta_y^2 U_{ij}\right) = AB f_{ij} + R_{ij}, \quad (i, j) \in \omega, \tag{2.3.6}
+-\left(B \delta_x^2 U_{ij} + A \delta_y^2 U_{ij}\right) = AB f_{ij} + R_{ij}, \quad (i, j) \in \omega, 
 $$
 
 where:
@@ -646,7 +646,7 @@ M_6 = \max \left\{
 \right\}. 
 $$
 
-From equations (2.3.7), (2.3.4), and (2.3.5), we know:
+From equations, we know:
 
 $$
 |R_{ij}| \leq \frac{1}{240} M_6 \left(h_1^4 + h_2^4\right), \quad (i, j) \in \omega. 
