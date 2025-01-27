@@ -630,12 +630,7 @@ $$
 
 Define:
 
-$$
-M_6 = \max \left\{
-\max_{(x, y) \in \Omega} \left|\frac{\partial^6 u(x, y)}{\partial x^6}\right|, 
-\max_{(x, y) \in \Omega} \left|\frac{\partial^6 u(x, y)}{\partial y^6}\right|
-\right\}. 
-$$
+![image](https://github.com/user-attachments/assets/7f0a620c-91fa-4a0b-ae1b-c1ce7937472c)
 
 From equations, we know:
 
